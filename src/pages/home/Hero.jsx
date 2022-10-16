@@ -17,7 +17,7 @@ export default function Hero() {
       <Stack
         pt={{ base: 3, md: 10, lg: 0 }}
         pb={{ base: 3, md: 24, lg: 0 }}
-        minH={{ base: "auto", lg: "80vh" }}
+        minH={{ base: "82vh", lg: "80vh" }}
         alignItems={"center"}
         direction={{ base: "column", lg: "row" }}
         spacing="4"
