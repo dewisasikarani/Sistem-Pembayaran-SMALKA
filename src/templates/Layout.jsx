@@ -6,7 +6,7 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const Layout = () => {
   return (
-    <Box pt="2vh">
+    <Box>
       <Navbar />
       <Box as="main">
         <Outlet />

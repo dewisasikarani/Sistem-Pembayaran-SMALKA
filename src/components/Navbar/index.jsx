@@ -54,7 +54,7 @@ export default function WithSubnavigation() {
           <HStack display={{ base: "none", lg: "flex" }} ml={10} spacing={4}>
             {useLocation().pathname === "/" ? (
               <>
-                <DesktopNav data={ItemHome} />
+                {ItemHome.length > 0 && <DesktopNav data={ItemHome} />}
                 <DesktopNav data={ItemGlobal} />
               </>
             ) : (
@@ -113,10 +113,10 @@ const DesktopNav = ({ data }) => {
             {...(navItem.href
               ? { as: "a", href: navItem.href, target: navItem.target }
               : {
-                  as: ScrollLink,
+                  as: navItem.as,
                   to: navItem.to,
-                  spy: true,
-                  smooth: true,
+                  spy: "true",
+                  smooth: "true",
                   offset: -50,
                   duration: 500,
                 })}
@@ -203,7 +203,7 @@ const MobileNav = ({ isOpen, onClose }) => {
   );
 };
 
-const MobileNavItem = ({ label, to, href, onClose, target }) => {
+const MobileNavItem = ({ label, to, href, onClose, target, as }) => {
   return (
     <Stack spacing={0}>
       <Flex
@@ -211,10 +211,10 @@ const MobileNavItem = ({ label, to, href, onClose, target }) => {
         {...(href
           ? { as: "a", href, target }
           : {
-              as: ScrollLink,
+              as: as,
               to,
-              spy: true,
-              smooth: true,
+              spy: "true",
+              smooth: "true",
               offset: -50,
               duration: 500,
             })}
@@ -247,8 +247,9 @@ const ItemGlobal = [
     target: "_blank",
   },
   {
-    label: "Tentang Website",
+    label: "Contact",
     subLabel: "Informasi tentang pembuatan website",
-    href: "#",
+    as: RouterLink,
+    to: "contact",
   },
 ];

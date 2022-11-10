@@ -12,13 +12,31 @@ import {
 import LayoutContainer from "../../components/LayoutContainer";
 import Seo from "../../components/SEO";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (email === "" || password === "") {
+      swal("Error", "Email dan Password tidak boleh kosong", "error");
+    } else if (email === "admin@gmail.com" && password === "admin") {
+      swal({
+        title: "Sukses",
+        text: "Login Berhasil",
+        icon: "success",
+      }).then((ifOk) => {
+        if (ifOk) {
+          navigate("/dashboard");
+        }
+      });
+    } else {
+      swal("Error", "Email atau Password salah", "error");
+    }
   };
 
   return (
@@ -74,19 +92,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </FormControl>
-            <Button
-              bg="green.400"
-              color="white"
-              _hover={{
-                bg: "green.500",
-              }}
-              _active={{
-                bg: "green.600",
-              }}
-              rounded="md"
-              w="100%"
-              type="submit"
-            >
+            <Button colorScheme="yellow" rounded="md" w="100%" type="submit">
               Masuk
             </Button>
           </Stack>

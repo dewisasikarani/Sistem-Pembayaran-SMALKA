@@ -17,7 +17,7 @@ export default function Hero() {
       <Stack
         pt={{ base: 3, md: 10, lg: 0 }}
         pb={{ base: 3, md: 24, lg: 0 }}
-        minH={{ base: "82vh", lg: "80vh" }}
+        minH={{ base: "84vh", lg: "82vh" }}
         alignItems={"center"}
         direction={{ base: "column", lg: "row" }}
         spacing="4"
@@ -49,7 +49,7 @@ export default function Hero() {
               as={Link}
               to="/masuk"
               rounded={"full"}
-              size={"lg"}
+              size={"md"}
               fontWeight={"normal"}
               px={6}
               colorScheme={"yellow"}

@@ -5,9 +5,8 @@ const LayoutContainer = ({ children, ...props }) => {
     <Stack
       alignItems="center"
       justify="center"
-      minH={{ base: "82vh", lg: "80vh" }}
+      minH={{ base: "84vh", lg: "82vh" }}
       px={{ base: 3, md: 6, lg: 10 }}
-      py="4"
       {...props}
     >
       {children}

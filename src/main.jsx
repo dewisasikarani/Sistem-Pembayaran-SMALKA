@@ -5,11 +5,13 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import "@fontsource/montserrat";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import "@fontsource/dm-sans"; // Defaults to weight 400.
+
 
 const theme = extendTheme({
   fonts: {
-    body: "Montserrat, system-ui, sans-serif",
-    heading: "Montserrat, system-ui, sans-serif",
+    body: "DM Sans, system-ui, sans-serif",
+    heading: "DM Sans, system-ui, sans-serif",
     monospace: "Menlo, monospace",
   },
   config: {
